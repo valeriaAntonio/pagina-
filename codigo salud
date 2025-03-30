@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrición y Salud</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #e57373;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .video-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .video-container iframe {
+            width: 32%;
+            aspect-ratio: 16 / 9;
+            border-radius: 10px;
+            border: none;
+        }
+        .imc-calculator input {
+            padding: 10px;
+            margin: 5px;
+            width: 100px;
+            border-radius: 5px;
+        }
+        .imc-calculator button {
+            padding: 10px 20px;
+            background-color: #e57373;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .imc-result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function calcularIMC() {
+            var peso = parseFloat(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+            
+            if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+                alert("Por favor, ingrese valores válidos.");
+                return;
+            }
+            
+            var imc = peso / (altura * altura);
+            var resultado = "Tu IMC es: " + imc.toFixed(2);
+
+            // Definir el rango de IMC
+            if (imc < 18.5) {
+                resultado += " (Peso insuficiente)";
+            } else if (imc >= 18.5 && imc < 24.9) {
+                resultado += " (Peso normal)";
+            } else if (imc >= 25 && imc < 29.9) {
+                resultado += " (Sobrepeso)";
+            } else {
+                resultado += " (Obesidad)";
+            }
+            
+            document.getElementById("resultadoIMC").innerText = resultado;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Nutrición y Salud
+        Echa por : Valeria Sáens Antonio 
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>Nutrición y Salud</h2>
+            <p>La alimentación equilibrada es clave para mantener una vida saludable. Consumir una variedad de alimentos ricos en nutrientes ayuda a fortalecer el sistema inmunológico y mejora el bienestar general. Definamos salud y nutricion: Salud es el estado de bienestar físico, mental y social completo, no solo la ausencia de enfermedades. Nutrición es el proceso mediante el cual el cuerpo obtiene y utiliza los nutrientes de los alimentos para mantener su salud y funcionamiento. Esta se basa principalmente en la alimentación y es muy importante en la adolescencia, la niñez y la adultez, ya que define cómo vive tu organismo y cómo cuidas tu cuerpo.</p>
+        </div>
+
+        <div class="section">
+            <h2>Trastornos Alimenticios</h2>
+            <p>Los trastornos alimenticios afectan la relación con la comida y pueden tener graves consecuencias para la salud. Buscar ayuda profesional es fundamental para su tratamiento.</p>
+        </div>
+
+        <div class="section">
+            <h2>¿Cómo saber mi IMC y para qué sirve?</h2>
+            <p>IMC: Índice de Masa Corporal. El IMC es una medida de salud que se usa para identificar categorías de peso y riesgo de la salud.</p>
+            <p><strong>Usos:</strong></p>
+            <ul>
+                <li>Detectar sobrepeso y obesidad.</li>
+                <li>Evaluar tendencias de salud para registros.</li>
+            </ul>
+            <p><strong>Rangos:</strong></p>
+            <ul>
+                <li>IMC menor a 18.5: peso insuficiente</li>
+                <li>IMC entre 18.5 y 24.9: peso normal</li>
+                <li>IMC entre 25.0 y 29.9: sobrepeso</li>
+                <li>IMC de 30.0 o más: obesidad</li>
+            </ul>
+        </div>
+
+        <!-- Calculador de IMC -->
+        <div class="section imc-calculator">
+            <h2>Calculadora de IMC</h2>
+            <p>Introduce tu peso en kilogramos y tu altura en metros para calcular tu IMC:</p>
+            <input type="number" id="peso" placeholder="Peso (kg)" step="0.1">
+            <input type="number" id="altura" placeholder="Altura (m)" step="0.01">
+            <button onclick="calcularIMC()">Calcular IMC</button>
+            <div class="imc-result" id="resultadoIMC"></div>
+        </div>
+
+        <!-- Sección de los videos -->
+        <div class="section">
+            <h2>Videos sobre Nutrición y Salud</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/5fzgsS3IGfQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/J2zxnhufMZ8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/2UcCN6fztmM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
