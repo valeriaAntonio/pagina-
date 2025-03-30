@@ -68,6 +68,28 @@
             font-size: 18px;
             font-weight: bold;
         }
+        
+        /* Para el modo de colores forzados */
+        @media (forced-colors: active) {
+            body {
+                background-color: black;
+                color: white;
+            }
+            header {
+                background-color: #e57373;
+                color: white;
+            }
+            .section {
+                background: #fff;
+                color: black;
+            }
+            .imc-calculator button {
+                background-color: #e57373;
+            }
+            .video-container iframe {
+                background-color: #f8d7da;
+            }
+        }
     </style>
     <script>
         function calcularIMC() {
@@ -100,12 +122,12 @@
 <body>
     <header>
         Nutrición y Salud
-        Echa por : Valeria Sáens Antonio 
+        Echa por: Valeria Sáens Antonio 
     </header>
     <div class="container">
         <div class="section">
             <h2>Nutrición y Salud</h2>
-            <p>La alimentación equilibrada es clave para mantener una vida saludable. Consumir una variedad de alimentos ricos en nutrientes ayuda a fortalecer el sistema inmunológico y mejora el bienestar general. Definamos salud y nutricion: Salud es el estado de bienestar físico, mental y social completo, no solo la ausencia de enfermedades. Nutrición es el proceso mediante el cual el cuerpo obtiene y utiliza los nutrientes de los alimentos para mantener su salud y funcionamiento. Esta se basa principalmente en la alimentación y es muy importante en la adolescencia, la niñez y la adultez, ya que define cómo vive tu organismo y cómo cuidas tu cuerpo.</p>
+            <p>La alimentación equilibrada es clave para mantener una vida saludable. Consumir una variedad de alimentos ricos en nutrientes ayuda a fortalecer el sistema inmunológico y mejora el bienestar general. Definamos salud y nutrición: Salud es el estado de bienestar físico, mental y social completo, no solo la ausencia de enfermedades. Nutrición es el proceso mediante el cual el cuerpo obtiene y utiliza los nutrientes de los alimentos para mantener su salud y funcionamiento. Esta se basa principalmente en la alimentación y es muy importante en la adolescencia, la niñez y la adultez, ya que define cómo vive tu organismo y cómo cuidas tu cuerpo.</p>
         </div>
 
         <div class="section">
@@ -152,4 +174,3 @@
     </div>
 </body>
 </html>
-
